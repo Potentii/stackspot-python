@@ -1,8 +1,10 @@
+from stackspot.stackspot_dict_types import QuickCommandPollExecutionOpts
+
 # Stackspot
 
 <center>
 
-<img src="./docs/images/simbolo-stk.svg" width="128px">
+<img src="https://raw.githubusercontent.com/Potentii/stackspot-python/master/docs/images/simbolo-stk.svg" width="128px">
 
 [![NPM Version][pypi-image]][pypi-url]
 
@@ -242,10 +244,10 @@ from stackspot import Stackspot
 execution_id = Stackspot.instance().ai.quick_command.create_execution('my-quick-command-slug', 'Input for this execution')
 
 # And call the poll method:
-# This will check the execution status until it's done and then return the execution object:
-execution = Stackspot.instance().ai.quick_command.poll_execution(execution_id)
+# This will check the execution status until it's done and then return the execution object (the 'opts' argument is optional):
+execution = Stackspot.instance().ai.quick_command.poll_execution(execution_id, { 'delay': 0.5, 'on_callback_response': lambda e: print('status: ' + e['progress']['status']) })
 
-print('status: ' + execution['progress']['status']) # 'COMPLETED'
+print('final status: ' + execution['progress']['status']) # 'COMPLETED'
 print('result: ' + execution['result']) # The Quick Command result.
 ```
 
