@@ -1,5 +1,3 @@
-from stackspot.stackspot_dict_types import QuickCommandPollExecutionOpts
-
 # Stackspot
 
 <center>
