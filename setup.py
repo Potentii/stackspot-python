@@ -8,7 +8,7 @@ with open(path.join(working_dir, 'README.md'), encoding='utf-8') as f:
 
 setup(
 	name='stackspot',
-	version='1.0.0',
+	version='1.0.1',
 	author='Guilherme Reginaldo Ruella',
 	author_email='potentii@gmail.com',
 	description='Stackspot API bindings for Python',
